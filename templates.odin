@@ -2,11 +2,11 @@ package main
 
 run_batch_pre := "@ECHO OFF\nodin run . -file -out:./bin/"
 run_batch_file := "%v"
-run_batch_post := ".exe -debug"
+run_batch_post := ".exe -debug -vet -strict-style -show-timings"
 
 build_batch_pre := "@ECHO OFF\nodin build . -file -out:./bin/"
 build_batch_file := "%v"
-build_batch_post := ".exe -debug"
+build_batch_post := ".exe -debug -vet -strict-style -show-timings"
 
 clean_batch :=
 	"@ECHO OFF\n" +

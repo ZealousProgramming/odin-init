@@ -28,6 +28,10 @@ import "core:fmt"
 import "core:os"
 import "core:strings"
 
+VERSION_MAJOR := 1
+VERSION_MINOR := 1
+VERSION_PATCH := 0
+
 main :: proc() {
 	context.allocator = context.temp_allocator
 	current_directory := os.get_current_directory()
@@ -35,7 +39,12 @@ main :: proc() {
 
 	buffer: [1024]byte
 
-	fmt.println("[odin-init] Version v1.0.0")
+	fmt.println(
+		"[odin-init] Version v%v.%v.%v",
+		VERSION_MAJOR,
+		VERSION_MINOR,
+		VERSION_PATCH,
+	)
 	fmt.print("[odin-init] Project name: ")
 	project_name := handle_input(buffer[:])
 
